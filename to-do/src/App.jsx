@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <p className="uppercase bg-red-700" >hello world</p>
+      <h1 className="text-4xl uppercase">hello world</h1>
     </>
   );
 }
