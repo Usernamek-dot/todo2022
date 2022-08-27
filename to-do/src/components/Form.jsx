@@ -3,6 +3,8 @@ import { useState } from "react";
 
 export const Form = () => {
   const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,8 +41,8 @@ export const Form = () => {
             "
                 type="text"
                 placeholder="Title"
-                value={title}
-                onChange={(e) => e.target.value(setTitle)}
+                defaultValue={title}
+                onChange={(e) => setTitle(e.target.value)}
               />
             </div>
             {/* message */}
@@ -65,6 +67,8 @@ export const Form = () => {
               "
                 rows="3"
                 placeholder="Your message"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
               ></textarea>
             </div>
             {/* //date */}
@@ -89,6 +93,8 @@ export const Form = () => {
                 "
                 type="date"
                 placeholder="Date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
               />
             </div>
             {/* submit */}
