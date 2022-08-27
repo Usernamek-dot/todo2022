@@ -1,3 +1,5 @@
+import { Button } from "./Button";
+
 export const Task = () => {
   return (
     <>
@@ -12,12 +14,7 @@ export const Task = () => {
               With supporting text below as a natural lead-in to additional
               content.
             </p>
-            <button
-              type="button"
-              class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-            >
-              Button
-            </button>
+            <Button />
           </div>
           <div class="py-3 px-6 border-t border-gray-300 text-gray-600">
             2 days ago
