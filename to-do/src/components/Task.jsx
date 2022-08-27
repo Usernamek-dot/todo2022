@@ -8,9 +8,9 @@ export const Task = () => {
           </h5>
           <form>
             {/* title */}
-            <div className="mb-5" >
+            <div className="mb-5">
               <input
-                class="
+                className="
               form-control
               block
               w-full
@@ -34,7 +34,7 @@ export const Task = () => {
             {/* message */}
             <div className="mb-5">
               <textarea
-                class="
+                className="
         form-control
         block
         w-full
@@ -58,7 +58,7 @@ export const Task = () => {
             {/* //date */}
             <div className="mb-5">
               <input
-                class="
+                className="
  form-control
  block
  w-full
