@@ -1,2 +1,12 @@
 # todoFIMLM2022
-To do excersise from React js COURSE
+
+📜 Project info :
+To do app clone in React JS.
+
+📚 Archive structure :
+
+📜 Resources:
+
+https://vitejs.dev (Vite)
+https://www.netlify.com/ (Frontend tooling)
+https://tailwindcss.com/ (ui library css)
