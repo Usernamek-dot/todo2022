@@ -1,15 +1,20 @@
 import { Button } from "./Button";
+import { useState } from "react";
 
 export const Form = () => {
+  const [title, setTitle] = useState("");
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitting  🦘  ");
+  };
   return (
     <>
       <div className=" py-10 px-5 w-full  ">
-      <h5 className="text-orange-200 text-xl leading-tight font-medium mb-2">
-            Add
-          </h5>
+        <h5 className="text-orange-200 text-xl leading-tight font-medium mb-2">
+          Add
+        </h5>
         <div className=" block p-6 rounded-lg shadow-lg bg-white ">
-         
-          <form>
+          <form onSubmit={handleOnSubmit}>
             {/* title */}
             <div className="mb-5">
               <input
@@ -32,6 +37,8 @@ export const Form = () => {
             "
                 type="text"
                 placeholder="Title"
+                value={title}
+                onChange={(e) => e.target.value(setTitle)}
               />
             </div>
             {/* message */}
@@ -83,7 +90,7 @@ export const Form = () => {
               />
             </div>
             {/* submit */}
-            <Button/>
+            <Button />
           </form>
         </div>
       </div>
