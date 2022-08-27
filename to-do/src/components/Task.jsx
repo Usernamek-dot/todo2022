@@ -4,7 +4,7 @@ export const Task = () => {
   return (
     <>
       <div class="flex justify-center">
-        <div class="block rounded-lg shadow-lg bg-white max-w-sm text-center">
+        <div class=" mt-5 block rounded-lg shadow-lg bg-white max-w-sm text-center">
           <div class="py-3 px-6 border-b border-gray-300">Featured</div>
           <div class="p-6">
             <h5 class="text-gray-900 text-xl font-medium mb-2">
