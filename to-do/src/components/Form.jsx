@@ -8,10 +8,15 @@ export const Form = ({ task, setTask, alert }) => {
   const [date, setDate] = useState("");
   const [error, setError] = useState(false);
 
+  const generateID = () => {
+    const id = Math.random().toString(20).substr(2);
+    return id;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    //validation starts here..
     if ([title, message, date].includes("")) {
-      //validation
       setError(true);
       return; // to avoid same state to remain in dom
     }
@@ -20,9 +25,10 @@ export const Form = ({ task, setTask, alert }) => {
       title,
       message,
       date,
+      id: generateID(),
     };
     setTask([...task, taskObject]); //spread operator + object
-    //reset form
+    //reset form  -- NO best practice
     setTitle("");
     setMessage("");
     setDate("");

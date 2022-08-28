@@ -8,10 +8,11 @@ export const List = ({ tasks }) => {
           Task List
         </h5>
         {/* iterating data */}
-        {tasks.map((task, index) => {
-          return <Task key={index} aTask={task} />;
+        {tasks.map((task) => {
+          return <Task key={task.id} aTask={task} />;
         })}
       </div>
     </>
   );
 };
+//BAD practice:  to have key={index} since we need to genereta our own ids for each component that we iterate through map.
