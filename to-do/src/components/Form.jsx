@@ -40,7 +40,7 @@ export const Form = ({ task, setTask, alert }) => {
         <h5 className="text-orange-200 text-xl leading-tight font-medium mb-2">
           Add
         </h5>
-        <div className=" block p-6 rounded-lg shadow-lg bg-white ">
+        <div className=" block p-6 rounded-lg shadow-lg dark:bg-gray-800 ">
           <form onSubmit={handleSubmit}>
             {/* validation */}
             {error && (
@@ -62,14 +62,14 @@ export const Form = ({ task, setTask, alert }) => {
               py-1.5
               text-base
               font-normal
-              text-gray-700
-              bg-white bg-clip-padding
+              text-white
+              bg-slate-800 bg-clip-padding
               border border-solid border-gray-300
               rounded
               transition
               ease-in-out
               m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+              focus:text-white focus:bg-slate-800 focus:border-blue-600 focus:outline-none
             "
                 type="text"
                 placeholder="Title"
@@ -88,14 +88,14 @@ export const Form = ({ task, setTask, alert }) => {
                 py-1.5
                 text-base
                 font-normal
-                text-gray-700
-                bg-white bg-clip-padding
+                text-white
+                bg-slate-800 bg-clip-padding
                 border border-solid border-gray-300
                 rounded
                 transition
                 ease-in-out
                 m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                focus:text-white focus:bg-slate-800 focus:border-blue-600 focus:outline-none
               "
                 rows="3"
                 placeholder="Your message"
@@ -114,14 +114,14 @@ export const Form = ({ task, setTask, alert }) => {
                 py-1.5
                 text-base
                 font-normal
-                text-gray-700
-                bg-white bg-clip-padding
+                text-white
+                bg-slate-800 bg-clip-padding
                 border border-solid border-gray-300
                 rounded
                 transition
                 ease-in-out
                 m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                focus:text-white focus:bg-slate-800 focus:border-blue-600 focus:outline-none
                 "
                 type="date"
                 placeholder="Date"

@@ -2,7 +2,7 @@ export const AlertError = ({ children }) => {
   return (
     <>
       <div
-        className=" mb-5  bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md"
+        className=" mb-5  dark:bg-red-200 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md"
         role="alert"
       >
         <div className="flex">
