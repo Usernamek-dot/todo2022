@@ -1,8 +1,8 @@
 import { Button } from "./Button";
 import { useState } from "react";
-import { AlertError } from "./Error";
+import { AlertError } from "./AlertError";
 
-export const Form = ({ task, setTask }) => {
+export const Form = ({ task, setTask, alert }) => {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [date, setDate] = useState("");
@@ -37,7 +37,9 @@ export const Form = ({ task, setTask }) => {
         <div className=" block p-6 rounded-lg shadow-lg bg-white ">
           <form onSubmit={handleSubmit}>
             {/* validation */}
-            {error && <AlertError />}
+            {error && (
+              <AlertError alert="You should fill out all the form first" />
+            )}
             {/* title */}
             <div className="mb-5">
               <input

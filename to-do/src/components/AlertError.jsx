@@ -1,4 +1,4 @@
-export const AlertError = () => {
+export const AlertError = ({ alert }) => {
   return (
     <>
       <div
@@ -17,10 +17,11 @@ export const AlertError = () => {
           </div>
           <div>
             <p className="font-bold">Hey!</p>
-            <p className="text-sm">You should fill out all the form first.</p>
+            <p className="text-sm"> {alert} </p>
           </div>
         </div>
       </div>
     </>
   );
 };
+//thanks to props passed by destructuring method (the { } ) above .. this alert component can be reusable bcs we had made it by props
