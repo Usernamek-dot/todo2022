@@ -4,7 +4,7 @@ import { Task } from "./Task";
 export const List = ({ tasks }) => {
   return (
     <>
-      <div className=" overflow-scroll h-screen  py-10 px-5 w-full">
+      <div className=" overflow-y-auto h-screen  py-10 px-5 w-full">
         {tasks && tasks.length ? (
           <>
             {/* title */}
