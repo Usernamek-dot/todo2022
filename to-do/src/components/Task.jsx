@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 
-export const Task = ({ task, setTask }) => {
-  const { title, message, date } = task; //desctructure the object to only get the props
+export const Task = ({ deleteTask, task, setTask }) => {
+  const { title, message, date, id } = task; //desctructure the object to only get the props
 
   return (
     <>
@@ -15,7 +15,7 @@ export const Task = ({ task, setTask }) => {
               {title}
             </h5>
             <p className="dark:text-slate-400 text-base mb-4">{message}</p>
-            <Button>Delete</Button>
+            <Button onClick={() => deleteTask(id)}>Delete</Button>
             <Button onClick={() => setTask(task)}>Update</Button>
           </div>
           <div className="py-3 px-6 border-t border-gray-300 text-gray-500">

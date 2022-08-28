@@ -33,6 +33,7 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
     //edit task
     if (task.id) {
       //editing task
+      taskObject.id = task.id;
       const updatedTasks = tasks.map((resp) =>
         resp.id === task.id ? taskObject : resp
       );

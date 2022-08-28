@@ -1,7 +1,7 @@
 import { NoList } from "./NoList";
 import { Task } from "./Task";
 
-export const List = ({ tasks, setTask }) => {
+export const List = ({ deleteTask, tasks, setTask }) => {
   return (
     <>
       <div className=" overflow-y-auto h-screen  py-10 px-5 w-full">
@@ -13,7 +13,14 @@ export const List = ({ tasks, setTask }) => {
             </h5>
             {/* iterating tasks */}
             {tasks.map((task) => {
-              return <Task key={task.id} task={task} setTask={setTask} />;
+              return (
+                <Task
+                  key={task.id}
+                  deleteTask={deleteTask}
+                  task={task}
+                  setTask={setTask}
+                />
+              );
             })}
           </>
         ) : (
