@@ -1,8 +1,8 @@
 import { Button } from "./Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AlertError } from "./AlertError";
 
-export const Form = ({ task, setTask, alert }) => {
+export const Form = ({ tasks, setTasks, setTask, task }) => {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [date, setDate] = useState("");
@@ -13,26 +13,50 @@ export const Form = ({ task, setTask, alert }) => {
     return id;
   };
 
+  // Form validation
   const handleSubmit = (e) => {
     e.preventDefault();
-    //validation starts here..
+    // to avoid same state to remain in dom
     if ([title, message, date].includes("")) {
       setError(true);
-      return; // to avoid same state to remain in dom
+      return;
     }
-    setError(false); // to avoid same state to remain in dom
+    setError(false);
+    // task object
     const taskObject = {
       title,
       message,
       date,
       id: generateID(),
     };
-    setTask([...task, taskObject]); //spread operator + object
+
+    //edit task
+    if (task.id) {
+      //editing task
+      const updatedTasks = tasks.map((resp) =>
+        resp.id === task.id ? taskObject : resp
+      );
+      setTasks(updatedTasks);
+      setTask({});
+    } else {
+      //new task
+      taskObject.id = generateID();
+      setTasks([...tasks, taskObject]);
+    }
     //reset form  -- NO best practice
     setTitle("");
     setMessage("");
     setDate("");
   };
+
+  useEffect(() => {
+    if (Object.keys(task).length > 0) {
+      setTitle(task.title);
+      setMessage(task.message);
+      setDate(task.date);
+      console.log("A task  👨‍⚖️  ");
+    }
+  }, [task]);
 
   return (
     <>
@@ -130,7 +154,7 @@ export const Form = ({ task, setTask, alert }) => {
               />
             </div>
             {/* submit */}
-            <Button>Submit</Button>
+            {!task.id ? <Button>Submit</Button> : <Button>Update</Button>}
           </form>
         </div>
       </div>
