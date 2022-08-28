@@ -1,21 +1,30 @@
 import { Button } from "./Button";
 import { useState } from "react";
 
-export const Form = () => {
+export const Form = ({ task, setTask }) => {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [date, setDate] = useState("");
-
   const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //validation
     if ([title, message, date].includes("")) {
+      //validation
       setError(true);
       return; // to avoid same state to remain in dom
     }
     setError(false); // to avoid same state to remain in dom
+    const taskObject = {
+      title,
+      message,
+      date,
+    };
+    setTask([...task, taskObject]); //spread operator + object
+    //reset form
+    setTitle("");
+    setMessage("");
+    setDate("");
   };
 
   return (
@@ -29,13 +38,13 @@ export const Form = () => {
             {/* validation */}
             {error && (
               <div
-                class=" mb-5  bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md"
+                className=" mb-5  bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md"
                 role="alert"
               >
-                <div class="flex">
-                  <div class="py-1">
+                <div className="flex">
+                  <div className="py-1">
                     <svg
-                      class="fill-current h-6 w-6 text-red-500 mr-4"
+                      className="fill-current h-6 w-6 text-red-500 mr-4"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                     >
@@ -43,8 +52,8 @@ export const Form = () => {
                     </svg>
                   </div>
                   <div>
-                    <p class="font-bold">Hey!</p>
-                    <p class="text-sm">
+                    <p className="font-bold">Hey!</p>
+                    <p className="text-sm">
                       You should fill out all the form first.
                     </p>
                   </div>
@@ -73,7 +82,7 @@ export const Form = () => {
             "
                 type="text"
                 placeholder="Title"
-                defaultValue={title}
+                value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
