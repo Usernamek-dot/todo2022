@@ -5,13 +5,12 @@ import { useState } from "react";
 
 function App(props) {
   const [task, setTask] = useState([]);
-
   return (
     <>
       <Header />
       <div className="flex justify-around">
         <Form task={task} setTask={setTask} />
-        <List />
+        <List tasks={task} />
       </div>
     </>
   );
