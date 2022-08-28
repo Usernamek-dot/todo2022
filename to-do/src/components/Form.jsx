@@ -38,7 +38,12 @@ export const Form = ({ task, setTask, alert }) => {
           <form onSubmit={handleSubmit}>
             {/* validation */}
             {error && (
-              <AlertError alert="You should fill out all the form first" />
+              <AlertError>
+                <p className="font-bold">Hey!</p>
+                <p className="text-sm">
+                  You should fill out all the form first.
+                </p>
+              </AlertError>
             )}
             {/* title */}
             <div className="mb-5">
@@ -119,7 +124,7 @@ export const Form = ({ task, setTask, alert }) => {
               />
             </div>
             {/* submit */}
-            <Button />
+            <Button>Submit</Button>
           </form>
         </div>
       </div>

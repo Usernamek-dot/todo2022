@@ -14,7 +14,7 @@ export const Task = () => {
               With supporting text below as a natural lead-in to additional
               content.
             </p>
-            <Button />
+            <Button>Delete</Button>
           </div>
           <div className="py-3 px-6 border-t border-gray-300 text-gray-600">
             2 days ago

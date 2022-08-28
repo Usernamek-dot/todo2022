@@ -8,7 +8,7 @@ export const Header = () => {
           <p className="font-medium leading-tight text-3xl mt-0 mb-2 text-orange-500">
             Kanban App
           </p>
-          <Button />
+          <Button>Login</Button>
         </div>
       </nav>
     </>
