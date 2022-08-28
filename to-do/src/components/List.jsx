@@ -8,8 +8,8 @@ export const List = ({ tasks }) => {
           Task List
         </h5>
         {/* iterating data */}
-        {tasks.map((task) => {
-          return <Task aTask={task} />;
+        {tasks.map((task, index) => {
+          return <Task key={index} aTask={task} />;
         })}
       </div>
     </>
