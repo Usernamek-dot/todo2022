@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 
 export const Task = ({ deleteTask, task, setTask }) => {
-  const { title, message, date, id } = task; //desctructure the object to only get the props
+  const { title, message, date, id } = task;
 
   return (
     <>
@@ -27,4 +27,3 @@ export const Task = ({ deleteTask, task, setTask }) => {
     </>
   );
 };
-// aTask prop was brougth from its parent LIST.JSX

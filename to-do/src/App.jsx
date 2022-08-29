@@ -2,20 +2,33 @@ import { Form } from "./components/Form";
 import { Header } from "./components/Header";
 import { List } from "./components/List";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState([]); //all tasks
-  const [task, setTask] = useState({}); //one task
+  const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState({});
   const deleteTask = (id) => {
     chooseTask = tasks.filter((task) => task.id !== id);
     setTasks(chooseTask);
     // console.log("Deleting...", id);
   };
+
+  useEffect(() => {
+    const gestTaskLocalStorage = () => {
+      const tasksLocalStorage = JSON.parse(localStorage.getItem("tasks")) ?? [];
+      setTasks(tasksLocalStorage);
+    };
+    taskLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   return (
     <>
       <Header />
       <div className="flex justify-around">
-        {/* toDo={toDo} is the prop from FORM.JSX to update button */}
         <Form task={task} tasks={tasks} setTasks={setTasks} setTask={setTask} />
         <List deleteTask={deleteTask} tasks={tasks} setTask={setTask} />
       </div>

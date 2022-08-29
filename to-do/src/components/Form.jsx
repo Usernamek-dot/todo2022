@@ -13,16 +13,14 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
     return id;
   };
 
-  // Form validation
+  // Validation
   const handleSubmit = (e) => {
     e.preventDefault();
-    // to avoid same state to remain in dom
     if ([title, message, date].includes("")) {
       setError(true);
       return;
     }
     setError(false);
-    // task object
     const taskObject = {
       title,
       message,
@@ -30,9 +28,7 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
       id: generateID(),
     };
 
-    //edit task
     if (task.id) {
-      //editing task
       taskObject.id = task.id;
       const updatedTasks = tasks.map((resp) =>
         resp.id === task.id ? taskObject : resp
@@ -40,11 +36,9 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
       setTasks(updatedTasks);
       setTask({});
     } else {
-      //new task
       taskObject.id = generateID();
       setTasks([...tasks, taskObject]);
     }
-    //reset form  -- NO best practice
     setTitle("");
     setMessage("");
     setDate("");

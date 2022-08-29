@@ -30,4 +30,3 @@ export const List = ({ deleteTask, tasks, setTask }) => {
     </>
   );
 };
-//BAD practice:  to have key={index} since we need to genereta our own ids for each component that we iterate through map.
