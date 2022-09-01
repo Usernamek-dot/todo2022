@@ -16,4 +16,4 @@ export const NoList = () => {
   );
 };
 
-//Here we practice how to add an img in reactjs
+//here we practice how to add an img in reactjs
