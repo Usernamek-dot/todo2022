@@ -2,11 +2,20 @@ import { Button } from "./Button";
 import { useState, useEffect } from "react";
 import { AlertError } from "./AlertError";
 
-export const Form = ({ tasks, setTasks, setTask, task }) => {
+export const Form = ({ task, tasks, setTasks, setTask }) => {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [date, setDate] = useState("");
   const [error, setError] = useState(false);
+
+  useEffect(() => {
+    if (Object.keys(task).length > 0) {
+      setTitle(task.title);
+      setMessage(task.message);
+      setDate(task.date);
+      console.log("A task  👨‍⚖️  ");
+    }
+  }, [task]);
 
   const generateID = () => {
     const id = Math.random().toString(20).substr(2);
@@ -42,15 +51,6 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
     setMessage("");
     setDate("");
   };
-
-  useEffect(() => {
-    if (Object.keys(task).length > 0) {
-      setTitle(task.title);
-      setMessage(task.message);
-      setDate(task.date);
-      console.log("A task  👨‍⚖️  ");
-    }
-  }, [task]);
 
   return (
     <>
