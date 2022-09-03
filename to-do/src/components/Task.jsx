@@ -1,8 +1,7 @@
 import { Button } from "./Button";
 
 export const Task = ({ deleteTask, task, setTask }) => {
-  const { title, message, date, id } = task; //desctructure the object to only get the props
-
+  const { title, message, date, id } = task;
   return (
     <>
       <div className="flex justify-center">
@@ -20,11 +19,9 @@ export const Task = ({ deleteTask, task, setTask }) => {
           </div>
           <div className="py-3 px-6 border-t border-gray-300 text-gray-500">
             {date}
-            {/* 2 days ago */}
           </div>
         </div>
       </div>
     </>
   );
 };
-// aTask prop was brougth from its parent LIST.JSX

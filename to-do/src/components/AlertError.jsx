@@ -21,4 +21,3 @@ export const AlertError = ({ children }) => {
     </>
   );
 };
-// This is a REUSABLE component thanks to props - destructuring props is the right way to add them -- using CHILDREN props makes it even easier since we can added as much props as we want from when we use the component withouth need of ADDING EACH PROP individually

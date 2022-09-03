@@ -13,16 +13,13 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
     return id;
   };
 
-  // Form validation
   const handleSubmit = (e) => {
     e.preventDefault();
-    // to avoid same state to remain in dom
     if ([title, message, date].includes("")) {
       setError(true);
       return;
     }
     setError(false);
-    // task object
     const taskObject = {
       title,
       message,
@@ -30,9 +27,7 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
       id: generateID(),
     };
 
-    //edit task
     if (task.id) {
-      //editing task
       taskObject.id = task.id;
       const updatedTasks = tasks.map((resp) =>
         resp.id === task.id ? taskObject : resp
@@ -40,11 +35,9 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
       setTasks(updatedTasks);
       setTask({});
     } else {
-      //new task
       taskObject.id = generateID();
       setTasks([...tasks, taskObject]);
     }
-    //reset form  -- NO best practice
     setTitle("");
     setMessage("");
     setDate("");
@@ -67,7 +60,6 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
         </h5>
         <div className=" block p-6 rounded-lg shadow-lg dark:bg-gray-800 ">
           <form onSubmit={handleSubmit}>
-            {/* validation */}
             {error && (
               <AlertError>
                 <p className="font-bold">Hey!</p>
@@ -76,7 +68,6 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
                 </p>
               </AlertError>
             )}
-            {/* title */}
             <div className="mb-5">
               <input
                 className="
@@ -102,7 +93,6 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
-            {/* message */}
             <div className="mb-5">
               <textarea
                 className="
@@ -128,7 +118,6 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
-            {/* //date */}
             <div className="mb-5">
               <input
                 className="
@@ -154,7 +143,6 @@ export const Form = ({ tasks, setTasks, setTask, task }) => {
                 onChange={(e) => setDate(e.target.value)}
               />
             </div>
-            {/* submit */}
             {!task.id ? <Button>Submit</Button> : <Button>Update</Button>}
           </form>
         </div>
