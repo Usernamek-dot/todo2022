@@ -1,11 +1,24 @@
 import { Form } from "./components/Form";
 import { Header } from "./components/Header";
 import { List } from "./components/List";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState({});
+  useEffect(() => {
+    const getTasksInLocalStorage = () => {
+      const tasksInLocalStorage = JSON.parse(
+        localStorage.getItem("tasks") ?? []
+      );
+      setTasks(tasksInLocalStorage);
+    };
+    getTasksInLocalStorage();
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const deleteTask = (id) => {
     const chooseTask = tasks.filter((task) => task.id !== id);
     setTasks(chooseTask);
