@@ -29,6 +29,6 @@ https://tailwindcss.com/ (ui library css)
 
 📜 Deploy:
 
-https://tranquil-queijadas-fa4c81.netlify.app/
+https://sunny-khapse-7e836e.netlify.app/
 
 
