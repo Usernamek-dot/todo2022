@@ -7,9 +7,8 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState({});
   const deleteTask = (id) => {
-    chooseTask = tasks.filter((task) => task.id !== id);
+    const chooseTask = tasks.filter((task) => task.id !== id);
     setTasks(chooseTask);
-    console.log("Deleting...", id);
   };
   return (
     <>
