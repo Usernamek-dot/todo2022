@@ -1,7 +1,6 @@
-import { Button } from "./Button";
-
 export const Task = ({ deleteTask, task, setTask }) => {
   const { title, message, date, id } = task;
+
   return (
     <>
       <div className="flex justify-center">
