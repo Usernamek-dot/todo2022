@@ -8,9 +8,8 @@ function App() {
   const [task, setTask] = useState({});
   useEffect(() => {
     const getTasksInLocalStorage = () => {
-      const tasksInLocalStorage = JSON.parse(
-        localStorage.getItem("tasks") ?? []
-      );
+      const tasksInLocalStorage =
+        JSON.parse(localStorage.getItem("tasks")) ?? [];
       setTasks(tasksInLocalStorage);
     };
     getTasksInLocalStorage();
