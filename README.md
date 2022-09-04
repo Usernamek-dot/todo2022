@@ -26,4 +26,6 @@ https://tailwindcss.com/ (ui library css)
 
 📜 Deploy:
 
+https://tranquil-queijadas-fa4c81.netlify.app/
+
 
