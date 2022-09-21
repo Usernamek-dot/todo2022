@@ -1,4 +1,4 @@
-# todoFIMLM2022
+# to do
 
 📜 Project info :
 To do app clone in React JS.
@@ -23,12 +23,12 @@ To do app clone in React JS.
 
 https://vitejs.dev (Vite)
 
-https://www.netlify.com/ (Frontend tooling)
+https://www.netlify.com/ (deploy tool)
 
 https://tailwindcss.com/ (ui library css)
 
-📜 Deploy:
+📜 Website:
 
-https://sunny-khapse-7e836e.netlify.app/
+https://kanbanapp6.netlify.app/
 
 
